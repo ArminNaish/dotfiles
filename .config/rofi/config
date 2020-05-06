@@ -1,0 +1,3 @@
+#rofi.theme: /usr/share/rofi/themes/gruvbox-dark.rasi
+rofi.theme: /usr/share/rofi/themes/flat_orange.rasi 
+rofi.dpi: 170

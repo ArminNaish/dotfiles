@@ -40,6 +40,9 @@ apt install compton
 # nitrogen
 apt install nitrogen
 
+# dunst
+sudo apt install dunst
+
 # lxappearance
 apt install lxappearance
 
@@ -60,3 +63,36 @@ apt-get install powerline
 
 sudo apt install ./oomox_VERSION_17.04+.deb  # or ./oomox_VERSION_18.10+.deb for Ubuntu 18.10+
 ```
+
+## zsh / presto
+Prezto will work with any recent release of Zsh, but the minimum required version is 4.3.11.
+
+Install zsh:
+```bash
+apt install zsh
+```
+
+Launch zsh:
+
+```bash
+zsh
+```
+
+Clone the repository:
+```bash
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+Create a new Zsh configuration by copying the Zsh configuration files provided:
+```bash
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+```
+Note: If you already have any of the given configuration files, ln will cause error. In simple cases you can load prezto by adding the line source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" to the bottom of your .zshrc and keep the rest of your Zsh configuration intact. For more complicated setups, it is recommended that you back up your original configs and replace them with the provided prezto runcoms.
+
+Set Zsh as your default shell:
+```bash
+chsh -s /bin/zsh
+```
+Open a new Zsh terminal window or tab.
