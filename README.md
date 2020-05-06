@@ -30,11 +30,7 @@ sudo make install
 ```
 
 ## other packages
-
-
 ```bash
-!/bin/bash
-
 # urxvt
 apt install rxvt-unicode
 
