@@ -38,21 +38,21 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Control+Left move left
-bindsym $mod+Control+Down move down
-bindsym $mod+Control+Up move up
-bindsym $mod+Control+Right move right
-
-# resize window (you can also use the mouse for that)
-bindsym Control+Right      resize shrink width 10 px or 10 ppt
-bindsym Control+Down       resize grow height 10 px or 10 ppt
-bindsym Control+Up         resize shrink height 10 px or 10 ppt
-bindsym Control+Left       resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # splitting containers
-bindsym $mod+v split vertical
-bindsym $mod+h split horizontal
-bindsym $mod+t split toggle
+#bindsym $mod+v split vertical
+#bindsym $mod+h split horizontal
+#bindsym $mod+t split toggle
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
 
 # scratchpad
 bindsym grave scratchpad show
@@ -107,6 +107,23 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 # (This should work for both acpilight or xbacklight.)
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
 
 #######
 #THEME#
