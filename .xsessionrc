@@ -1,0 +1,9 @@
+# set click method to area (enable right button click)
+xinput set-prop 12 327 1 0 
+
+# disable middle button
+xinput set-prop 12 329 1
+
+# disable two finger tab right click
+xinput set-prop 12 317 0, 1
+
