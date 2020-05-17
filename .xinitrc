@@ -24,7 +24,7 @@ sleep 2
 # Set laptop monitor as primary
 xrandr --output eDP-1 --mode 3000x2000 --rate 60 --primary --scale 1x1
 # Look for external monitor, if found, set it to the left...
-xrandr --output VGA1 --mode 1600x900 --rate 60 --left-of LVDS1
+xrandr --output DP-2 --mode 1920x1080 --rate 60 --scale 2x2
 
 # Set wallpaper(s)
 nitrogen --restore &
