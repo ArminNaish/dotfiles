@@ -17,14 +17,12 @@ dunst &
 # Load terminal daemon
 urxvtd -q -o -f &
 
-# Sleep a couple seconds here
-# (work-around intel driver garbling my
-# external monitor display settings below...)
-sleep 2
+# Look for external monitor, if found, set it to the left ...
+xrandr | grep 'DP-2 connected' && xrandr --output DP-2 --mode 1920x1080 --rate 60 --scale 2x2
+
 # Set laptop monitor as primary
 xrandr --output eDP-1 --mode 3000x2000 --rate 60 --primary --scale 1x1
-# Look for external monitor, if found, set it to the left...
-xrandr --output DP-2 --mode 1920x1080 --rate 60 --scale 2x2
+
 
 # Set wallpaper(s)
 nitrogen --restore &
